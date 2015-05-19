@@ -1,0 +1,7 @@
+name = customui
+description = Custom UI 
+package = DQ-UX
+
+files[] = customui.module
+core = 7.x
+

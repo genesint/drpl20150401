@@ -1,0 +1,33 @@
+<?php
+
+function customui_menu()
+{
+    $query = "select nid from node where type='menu'";
+    $records = db_query($query);
+    $items = array();
+    $page_arguments = array();
+    foreach ($records as $record) {
+        $node = node_load($record->nid);
+        if (!empty($node->field_page_arguments['und'])) {
+            $page_arguments = explode(",", $node->field_page_arguments['und'][0]['value']);
+        }
+        $items[$node->field_url['und'][0]['value']] = array(
+            'title' => $node->title,
+            'access callback' => TRUE,
+            'page callback' => $node->field_page_callback['und'][0]['value'],
+            'page arguments' => $page_arguments,
+            'file' => $node->field_file['und'][0]['value'],
+        );
+    }
+    return $items;
+}
+
+function customui_theme()
+{
+    return array(
+        'welcome' => array(
+            'template' => 'welcome',
+            'variables' => array('title' => '', 'contents' => array())
+        ),
+    );
+}

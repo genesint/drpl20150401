@@ -1,0 +1,13 @@
+title|title callback|title arguments|description|page callback|page arguments|access callback|access arguments|file|file path|weight|menu_name|type|url
+Welcome||||router||||router.inc||||MENU_NORMAL_ITEM|welcome
+About Us||||router||||router.inc||||MENU_NORMAL_ITEM|about-us
+Contact Us||||router||||router.inc||||MENU_NORMAL_ITEM|contact-us
+Staff profiles||||router||||router.inc||||MENU_NORMAL_ITEM|staff-profiles
+What we do||||router||||router.inc||||MENU_NORMAL_ITEM|what-we-do
+Resources||||router||||router.inc||||MENU_NORMAL_ITEM|resources
+News||||router||||router.inc||||MENU_NORMAL_ITEM|news
+Blog||||router||||router.inc||||MENU_NORMAL_ITEM|blog
+Forum||||router||||router.inc||||MENU_NORMAL_ITEM|forum
+Schedule appointment||||router||||router.inc||||MENU_NORMAL_ITEM|schedule-an-appointment
+General enquiry||||router||||router.inc||||MENU_NORMAL_ITEM|general-enquiry
+Location||||router||||router.inc||||MENU_NORMAL_ITEM|location
