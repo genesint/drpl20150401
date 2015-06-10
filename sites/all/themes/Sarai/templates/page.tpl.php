@@ -166,93 +166,86 @@
 
     </div>
 </div>
-<?php
-$request_path = request_path();
-$skip = empty($_GET['skip']) ? "" : $_GET['skip'];
-if ($skip != 1) {
+<div class="row">
+
+    <?php
+    $query = new EntityFieldQuery();
+    $query
+        ->entityCondition('entity_type', 'node')
+        ->entityCondition('bundle', 'site_content')
+        ->propertyCondition('status', 1);
+    $rResult = $query->execute();
+    $nids = array_keys($rResult['node']);
+    $list_size = floor(count($nids) / 3);
     ?>
-    <div class="row">
 
-        <?php
-        $query = new EntityFieldQuery();
-        $query
-            ->entityCondition('entity_type', 'node')
-            ->entityCondition('bundle', 'site_content')
-            ->propertyCondition('status', 1);
-        $rResult = $query->execute();
-        $nids = array_keys($rResult['node']);
-        $list_size = floor(count($nids) / 3);
-        ?>
-
-        <div class="col-md-1"></div>
-        <div class="col-md-3">
-            <ul class="itcc-services">
-                <li>Services:</li>
-                <?php
-                for ($i = 0; $i < $list_size; $i++) {
-                    $node = node_load($nids[$i]);
-                    print "<li><a href='services?skip=1&nid=" . $nids[$i] . "'>" . $node->title . "</a></li>";
-                }
-                ?>
-            </ul>
-        </div>
-
-        <div class="col-md-3">
-            <ul class="itcc-services">
-                <li>&nbsp;</li>
-                <?php
-                for ($i = $list_size; $i < 2 * $list_size; $i++) {
-                    $node = node_load($nids[$i]);
-                    print "<li><a href='services?skip=1&nid=" . $nids[$i] . "'>" . $node->title . "</a></li>";
-                }
-                ?>
-            </ul>
-        </div>
-
-        <div class="col-md-3">
-            <ul class="itcc-services">
-                <li>&nbsp;</li>
-                <?php
-                for ($i = 2 * $list_size; $i < count($nids); $i++) {
-                    $node = node_load($nids[$i]);
-                    print "<li><a href='services?skip=1&nid=" . $nids[$i] . "'>" . $node->title . "</a></li>";
-                }
-                ?>
-            </ul>
-        </div>
-        <div class="col-md-2"></div>
+    <div class="col-md-1"></div>
+    <div class="col-md-3">
+        <ul class="itcc-services">
+            <li>Services:</li>
+            <?php
+            for ($i = 0; $i < $list_size; $i++) {
+                $node = node_load($nids[$i]);
+                print "<li><a href='services?skip=1&nid=" . $nids[$i] . "'>" . $node->title . "</a></li>";
+            }
+            ?>
+        </ul>
     </div>
-    <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-3">
-            <ul class="contact-us">
-                <li>Contact us:</li>
-                <li>In-Touch Counselling</li>
-                <li>Kyaddondo, Plot 3992 & 3994, Kiwatule-Ntinda Road</li>
-                <li>P. O. Box 2560, Kampala, Uganda</li>
-            </ul>
-        </div>
 
-        <div class="col-md-3">
-            <ul class="contact-us">
-                <li>&nbsp;</li>
-                <li>Email: intouchcounselling1@gmail.com</li>
-            </ul>
-        </div>
-
-        <div class="col-md-3">
-            <ul class="contact-us">
-                <li>&nbsp;</li>
-                <li>Mobile #1: +256 772 461 004</li>
-                <li>Mobile #2: +256 701 095 708</li>
-            </ul>
-        </div>
-
-        <div class="col-md-1"></div>
+    <div class="col-md-3">
+        <ul class="itcc-services">
+            <li>&nbsp;</li>
+            <?php
+            for ($i = $list_size; $i < 2 * $list_size; $i++) {
+                $node = node_load($nids[$i]);
+                print "<li><a href='services?skip=1&nid=" . $nids[$i] . "'>" . $node->title . "</a></li>";
+            }
+            ?>
+        </ul>
     </div>
-<?php
-}
-?>
+
+    <div class="col-md-3">
+        <ul class="itcc-services">
+            <li>&nbsp;</li>
+            <?php
+            for ($i = 2 * $list_size; $i < count($nids); $i++) {
+                $node = node_load($nids[$i]);
+                print "<li><a href='services?skip=1&nid=" . $nids[$i] . "'>" . $node->title . "</a></li>";
+            }
+            ?>
+        </ul>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-3">
+        <ul class="itcc-contact-us">
+            <li>Contact us:</li>
+            <li>In-Touch Counselling</li>
+            <li>Kyaddondo, Plot 3992 & 3994, Kiwatule-Ntinda Road</li>
+            <li>P. O. Box 2560, Kampala, Uganda</li>
+        </ul>
+    </div>
+
+    <div class="col-md-3">
+        <ul class="itcc-contact-us">
+            <li>&nbsp;</li>
+            <li>Email: intouchcounselling1@gmail.com</li>
+        </ul>
+    </div>
+
+    <div class="col-md-3">
+        <ul class="itcc-contact-us">
+            <li>&nbsp;</li>
+            <li>Mobile #1: +256 772 461 004</li>
+            <li>Mobile #2: +256 701 095 708</li>
+        </ul>
+    </div>
+
+    <div class="col-md-1"></div>
+</div>
+
 <footer class="footer container">
     <?php print render($page['footer']); ?>
 </footer>

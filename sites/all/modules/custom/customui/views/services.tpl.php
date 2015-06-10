@@ -6,17 +6,49 @@ $query
     ->propertyCondition('status', 1);
 $rResult = $query->execute();
 $nids = array_keys($rResult['node']);
+$default=63;
+$nid = empty($_GET['nid']) ? $default : $_GET['nid'];
 ?>
-<div class="row">
-    <div class="col-md-2">
-        <ul class="nav  nav-stacked">
-            <?php
-            for ($i = 0; $i < count($nids); $i++) {
-                $node=node_load($nids[$i]);
-                print "<li role='presentation'><a href='services?nid=".$nids[$i]."'>".$node->title."</a></li>";
-            }
-            ?>
-        </ul>
+<form class="form-horizontal">
+    <div class="form-group">
+        <div class="col-md-1"></div>
+        <div class="col-md-3">
+            <select id="itcc-services" class="form-control" onchange="load();">
+                <?php
+                for ($i = 0; $i < count($nids); $i++) {
+                    $node = node_load($nids[$i]);
+                    if ($nid == $nids[$i]) {
+                        print "<option value='" . $nids[$i] . "' selected='selected'>" . $node->title . "</option>";
+                    } else {
+                        print "<option value='" . $nids[$i] . "'>" . $node->title . "</option>";
+                    }
+                }
+                ?>
+            </select>
+        </div>
+        <div class="col-md-6"></div>
+        <div class="col-md-2"></div>
     </div>
-    <div class="col-md-10"></div>
+</form>
+
+
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-9">
+        <?php
+        $node = node_load($nid);
+        if (!empty($node->body)) {
+            print $node->body['und']['0']['value'];
+        } else {
+            print "No content available";
+        }
+        ?>
+    </div>
+    <div class="col-md-2"></div>
 </div>
+<script>
+    function load() {
+        var nid = jQuery("#itcc-services").val();
+        window.location.href = "services?nid=" + nid;
+    }
+</script>
