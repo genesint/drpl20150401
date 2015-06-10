@@ -27,6 +27,32 @@ function customui_theme()
     return array(
         'welcome' => array(
             'template' => 'welcome',
+            'path' => 'sites/all/modules/custom/customui/views',
+            'variables' => array('title' => '', 'contents' => array())
+        ),
+        'contact-us' => array(
+            'template' => 'contact-us',
+            'path' => 'sites/all/modules/custom/customui/views',
+            'variables' => array('title' => '', 'contents' => array())
+        ),
+        'about-us' => array(
+            'template' => 'about-us',
+            'path' => 'sites/all/modules/custom/customui/views',
+            'variables' => array('title' => '', 'contents' => array())
+        ),
+        'contact-us' => array(
+            'template' => 'contact-us',
+            'path' => 'sites/all/modules/custom/customui/views',
+            'variables' => array('title' => '', 'contents' => array())
+        ),
+        'services' => array(
+            'template' => 'services',
+            'path' => 'sites/all/modules/custom/customui/views',
+            'variables' => array('title' => '', 'contents' => array())
+        ),
+        'services-item' => array(
+            'template' => 'services-item',
+            'path' => 'sites/all/modules/custom/customui/views',
             'variables' => array('title' => '', 'contents' => array())
         ),
     );
