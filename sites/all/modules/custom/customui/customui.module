@@ -30,11 +30,6 @@ function customui_theme()
             'path' => 'sites/all/modules/custom/customui/views',
             'variables' => array('title' => '', 'contents' => array())
         ),
-        'contact-us' => array(
-            'template' => 'contact-us',
-            'path' => 'sites/all/modules/custom/customui/views',
-            'variables' => array('title' => '', 'contents' => array())
-        ),
         'about-us' => array(
             'template' => 'about-us',
             'path' => 'sites/all/modules/custom/customui/views',
@@ -54,6 +49,11 @@ function customui_theme()
             'template' => 'services-item',
             'path' => 'sites/all/modules/custom/customui/views',
             'variables' => array('title' => '', 'contents' => array())
+        ),
+        'inquiry_node_form' => array(
+            'render element' => 'form',
+            'template' => 'inquiry-node-form',
+            'path' => 'sites/all/modules/custom/customui/views'
         ),
     );
 }
