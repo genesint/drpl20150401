@@ -34,7 +34,7 @@ $nid = empty($_GET['nid']) ? $default : $_GET['nid'];
 
 <div class="row">
     <div class="col-md-1"></div>
-    <div class="col-md-9">
+    <div class="col-md-9  itcc-body">
         <?php
         $node = node_load($nid);
         if (!empty($node->body)) {

@@ -180,7 +180,7 @@
     ?>
 
     <div class="col-md-1"></div>
-    <div class="col-md-3">
+    <div class="col-md-3 itcc-services-column">
         <ul class="itcc-services">
             <li>Services:</li>
             <?php
@@ -189,10 +189,11 @@
                 print "<li><a href='services?skip=1&nid=" . $nids[$i] . "'>" . $node->title . "</a></li>";
             }
             ?>
+            <li>&nbsp;</li>
         </ul>
     </div>
 
-    <div class="col-md-3">
+    <div class="col-md-3 itcc-services-column">
         <ul class="itcc-services">
             <li>&nbsp;</li>
             <?php
@@ -201,10 +202,11 @@
                 print "<li><a href='services?skip=1&nid=" . $nids[$i] . "'>" . $node->title . "</a></li>";
             }
             ?>
+            <li>&nbsp;</li>
         </ul>
     </div>
 
-    <div class="col-md-3">
+    <div class="col-md-3 itcc-services-column">
         <ul class="itcc-services">
             <li>&nbsp;</li>
             <?php
@@ -219,27 +221,33 @@
 </div>
 <div class="row">
     <div class="col-md-1"></div>
-    <div class="col-md-3">
+    <div class="col-md-3 itcc-contact-us-column">
         <ul class="itcc-contact-us">
-            <li>Contact us:</li>
+            <li><em>Contact us</em></li>
             <li>In-Touch Counselling</li>
-            <li>Kyaddondo, Plot 3992 & 3994, Kiwatule-Ntinda Road</li>
-            <li>P. O. Box 2560, Kampala, Uganda</li>
+            <li>Kyaddondo, Plot 3992 & 3994,</li>
+            <li>Kiwatule-Ntinda Road</li>
+            <li>P. O. Box 12754, Kampala, Uganda</li>
         </ul>
     </div>
 
-    <div class="col-md-3">
+    <div class="col-md-3 itcc-contact-us-column">
         <ul class="itcc-contact-us">
+            <li><em>Email us</em></li>
+            <li>intouchcounselling1@gmail.com</li>
             <li>&nbsp;</li>
-            <li>Email: intouchcounselling1@gmail.com</li>
+            <li>&nbsp;</li>
+            <li>&nbsp;</li>
         </ul>
     </div>
 
-    <div class="col-md-3">
+    <div class="col-md-3 itcc-contact-us-column">
         <ul class="itcc-contact-us">
+            <li><em>Call us</em></li>
+            <li>+256 772 461 004</li>
+            <li>+256 701 095 708</li>
             <li>&nbsp;</li>
-            <li>Mobile #1: +256 772 461 004</li>
-            <li>Mobile #2: +256 701 095 708</li>
+            <li>&nbsp;</li>
         </ul>
     </div>
 
