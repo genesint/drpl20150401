@@ -78,16 +78,19 @@
         <div class="navbar-header">
             <?php if ($logo): ?>
                 <a class="logo navbar-btn pull-left" href="<?php print $front_page; ?>"
-                   title="<?php print t('Home'); ?>">
-                    <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>"/>
+                   title="<?php print t('Home'); ?>" >
+                    <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" id="site-logo"/>
                 </a>
             <?php endif; ?>
 
             <?php if (!empty($site_name)): ?>
                 <a class="name navbar-brand" href="<?php print $front_page; ?>"
-                   title="<?php print t('Home'); ?>"><?php print $site_name; ?></a>
+                   title="<?php print t('Home'); ?>" id="site-name"><?php print $site_name; ?></a>
             <?php endif; ?>
 
+            <?php if (!empty($site_slogan)): ?>
+                <!--<a class="lead" id="site-slogan"><?php print $site_slogan; ?></a>-->
+            <?php endif; ?>
             <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -96,6 +99,8 @@
                 <span class="icon-bar"></span>
             </button>
         </div>
+    </div>
+    <div class="container">
 
         <?php if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
             <div class="navbar-collapse collapse">
@@ -118,9 +123,6 @@
 <div class="main-container container">
 
     <header role="banner" id="page-header">
-        <?php if (!empty($site_slogan)): ?>
-            <p class="lead"><?php print $site_slogan; ?></p>
-        <?php endif; ?>
 
         <?php print render($page['header']); ?>
     </header>
@@ -166,59 +168,10 @@
 
     </div>
 </div>
-<div class="row">
 
-    <?php
-    $query = new EntityFieldQuery();
-    $query
-        ->entityCondition('entity_type', 'node')
-        ->entityCondition('bundle', 'site_content')
-        ->propertyCondition('status', 1);
-    $rResult = $query->execute();
-    $nids = array_keys($rResult['node']);
-    $list_size = floor(count($nids) / 3);
-    ?>
 
-    <div class="col-md-1"></div>
-    <div class="col-md-3 itcc-services-column">
-        <ul class="itcc-services">
-            <li>Services:</li>
-            <?php
-            for ($i = 0; $i < $list_size; $i++) {
-                $node = node_load($nids[$i]);
-                print "<li><a href='services?skip=1&nid=" . $nids[$i] . "'>" . $node->title . "</a></li>";
-            }
-            ?>
-            <li>&nbsp;</li>
-        </ul>
-    </div>
 
-    <div class="col-md-3 itcc-services-column">
-        <ul class="itcc-services">
-            <li>&nbsp;</li>
-            <?php
-            for ($i = $list_size; $i < 2 * $list_size; $i++) {
-                $node = node_load($nids[$i]);
-                print "<li><a href='services?skip=1&nid=" . $nids[$i] . "'>" . $node->title . "</a></li>";
-            }
-            ?>
-            <li>&nbsp;</li>
-        </ul>
-    </div>
 
-    <div class="col-md-3 itcc-services-column">
-        <ul class="itcc-services">
-            <li>&nbsp;</li>
-            <?php
-            for ($i = 2 * $list_size; $i < count($nids); $i++) {
-                $node = node_load($nids[$i]);
-                print "<li><a href='services?skip=1&nid=" . $nids[$i] . "'>" . $node->title . "</a></li>";
-            }
-            ?>
-        </ul>
-    </div>
-    <div class="col-md-2"></div>
-</div>
 <div class="row">
     <div class="col-md-1"></div>
     <div class="col-md-3 itcc-contact-us-column">

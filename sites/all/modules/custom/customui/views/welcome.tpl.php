@@ -73,3 +73,62 @@ $nids = array_keys($rResult['node']);
 
     </div>
 </div>
+
+<div class="row">
+
+    <?php
+    $query = new EntityFieldQuery();
+    $query
+        ->entityCondition('entity_type', 'node')
+        ->entityCondition('bundle', 'site_content')
+        ->propertyCondition('status', 1);
+    $rResult = $query->execute();
+    $nids = array_keys($rResult['node']);
+    $list_size = floor(count($nids) / 3);
+    ?>
+
+    <div class="col-md-1"></div>
+    <div class="col-md-3 itcc-services-column">
+        <ul class="itcc-services">
+            <li>Services:</li>
+            <?php
+            for ($i = 0; $i < $list_size; $i++) {
+                $node = node_load($nids[$i]);
+                print "<li><a href='services?skip=1&nid=" . $nids[$i] . "'>" . ucfirst(strtolower($node->title)) . "</a></li>";
+            }
+            for ($i = 0; $i < count($nids)-3*$list_size; $i++) {
+                print "<li>&nbsp;</li>";
+            }
+            ?>
+        </ul>
+    </div>
+
+    <div class="col-md-3 itcc-services-column">
+        <ul class="itcc-services">
+            <li>&nbsp;</li>
+            <?php
+            for ($i = $list_size; $i < 2 * $list_size; $i++) {
+                $node = node_load($nids[$i]);
+                print "<li><a href='services?skip=1&nid=" . $nids[$i] . "'>" . ucfirst(strtolower($node->title)) . "</a></li>";
+            }
+            for ($i = 0; $i < count($nids)-3*$list_size; $i++) {
+                print "<li>&nbsp;</li>";
+            }
+            ?>
+        </ul>
+    </div>
+
+    <div class="col-md-3 itcc-services-column">
+        <ul class="itcc-services">
+            <li>&nbsp;</li>
+            <?php
+            for ($i = 2 * $list_size; $i < count($nids); $i++) {
+                $node = node_load($nids[$i]);
+                print "<li><a href='services?skip=1&nid=" . $nids[$i] . "'>" . ucfirst(strtolower($node->title)). "</a></li>";
+            }
+            ?>
+        </ul>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+
