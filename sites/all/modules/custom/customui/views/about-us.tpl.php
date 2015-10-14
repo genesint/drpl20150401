@@ -1,9 +1,8 @@
 <div class="row">
     <div class="col-md-1"></div>
-    <div class="col-md-3"><h2>About us</h2></div>
-    <div class="col-md-6"></div>
+    <div class="col-md-9 itcc-breadcrumb"><h2>About us</h2></div>
     <div class="col-md-2"></div>
-    </div>
+</div>
 <div class="row">
     <div class="col-md-1"></div>
     <div class="col-md-3">

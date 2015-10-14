@@ -6739,12 +6739,12 @@ table .checkbox input[type="checkbox"] {
   color: #843534;
 }
 body {
-  background-color: #e0e0d5;
+  background-color: white;
 }
 #navbar {
   margin-top: 0px;
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-bottom: 1%;
 }
 body > header {
   max-width: 100% !important;
@@ -6866,9 +6866,15 @@ footer {
   background-color: white;
 }
 #site-name {
-  font-size: xx-large;
+  font-size: large;
   margin-top: 1%;
 }
 #site-logo {
   zoom: 50%;
+}
+.itcc-services-menu {
+  background-color: blue;
+}
+.itcc-breadcrumb {
+  background-color: green;
 }

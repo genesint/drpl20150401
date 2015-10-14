@@ -78,7 +78,7 @@
         <div class="navbar-header">
             <?php if ($logo): ?>
                 <a class="logo navbar-btn pull-left" href="<?php print $front_page; ?>"
-                   title="<?php print t('Home'); ?>" >
+                   title="<?php print t('Home'); ?>">
                     <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" id="site-logo"/>
                 </a>
             <?php endif; ?>
@@ -99,9 +99,7 @@
                 <span class="icon-bar"></span>
             </button>
         </div>
-    </div>
-    <div class="container">
-
+        
         <?php if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
             <div class="navbar-collapse collapse">
                 <nav role="navigation">
@@ -118,6 +116,7 @@
             </div>
         <?php endif; ?>
     </div>
+
 </header>
 
 <div class="main-container container">
@@ -168,8 +167,6 @@
 
     </div>
 </div>
-
-
 
 
 <div class="row">

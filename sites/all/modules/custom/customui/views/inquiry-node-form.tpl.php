@@ -2,7 +2,11 @@
 $form["body"]['#access'] = 0;
 $form['actions']["preview"]['#access'] = 0;
 ?>
-
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-9 itcc-breadcrumb"><h2>Contact us</h2></div>
+    <div class="col-md-2"></div>
+</div>
 <div class="row">
     <div class="col-md-1"></div>
     <div class="col-md-9"><h4>Submit an inquiry</h4></div>
