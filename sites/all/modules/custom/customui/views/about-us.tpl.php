@@ -1,11 +1,11 @@
 <div class="row">
     <div class="col-md-1"></div>
-    <div class="col-md-9 itcc-breadcrumb"><h2>About us</h2></div>
+    <div class="col-md-9 itcc-breadcrumb"><h4>About us</h4></div>
     <div class="col-md-2"></div>
 </div>
 <div class="row">
     <div class="col-md-1"></div>
-    <div class="col-md-3">
+    <div class="col-md-3 itcc-body">
         <?php
         global $base_url;
         $nid = 83;

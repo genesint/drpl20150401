@@ -6774,7 +6774,7 @@ h1.page-header {
 -------------------------------------------------- */
 /* Carousel base class */
 .carousel {
-  height: 300px;
+  height: 400px;
   margin-bottom: 10px;
 }
 /* Since positioning the image, we need to help out the caption */
@@ -6783,7 +6783,7 @@ h1.page-header {
 }
 /* Declare heights because of positioning of img element */
 .carousel .item {
-  height: 300px;
+  height: 400px;
   background-color: #777;
 }
 .carousel-inner > .item > img {
@@ -6791,7 +6791,6 @@ h1.page-header {
   top: 0;
   left: 0;
   min-width: 100%;
-  height: 300px;
 }
 /* MARKETING CONTENT
 -------------------------------------------------- */
@@ -6835,7 +6834,7 @@ footer {
 }
 .itcc-services-column {
   padding-top: 10px;
-  background-color: #308811;
+  background-color: #428bca;
   color: white;
 }
 .itcc-services-column a {
@@ -6844,7 +6843,7 @@ footer {
 }
 .itcc-contact-us-column {
   padding-top: 10px;
-  background-color: #965e5e;
+  background-color: #428bca;
   color: white;
 }
 .jumbotron {
@@ -6852,13 +6851,32 @@ footer {
   border-radius: 0px;
 }
 .itcc-body {
-  padding-left: 1%;
-  padding-right: 1%;
-  background-color: white;
+  padding-left: 0;
+  padding-right: 0;
+  background-color: #e8f8f8;
   padding-bottom: 1%;
   font-size: 14px;
   line-height: 24px;
-  min-height: 600px;
+}
+.itcc-body > h4,
+.itcc-body > p {
+  padding-left: 1%;
+  padding-right: 1%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+.itcc-body > div > h2 > a {
+  padding-left: 1%;
+  padding-right: 1%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  font-size: 14px;
+}
+.itcc-body > div > div.content {
+  padding-left: 1%;
+  padding-right: 1%;
+  padding-top: 1%;
+  padding-bottom: 1%;
 }
 .itcc-carousel {
   padding-left: 0px;
@@ -6868,13 +6886,15 @@ footer {
 #site-name {
   font-size: large;
   margin-top: 1%;
+  color: #428bca;
 }
 #site-logo {
   zoom: 50%;
 }
 .itcc-services-menu {
-  background-color: blue;
+  background-color: #f6f7f8;
 }
 .itcc-breadcrumb {
-  background-color: green;
+  background-color: #428bca;
+  color: white;
 }

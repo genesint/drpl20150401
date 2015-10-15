@@ -12,7 +12,7 @@ $nid = empty($_GET['nid']) ? $default : $_GET['nid'];
 ?>
 <div class="row">
     <div class="col-md-1"></div>
-    <div class="col-md-9 itcc-breadcrumb"><h2>Services</h2></div>
+    <div class="col-md-9 itcc-breadcrumb"><h4>Services</h4></div>
     <div class="col-md-2"></div>
 </div>
 
@@ -41,7 +41,9 @@ $nid = empty($_GET['nid']) ? $default : $_GET['nid'];
         <?php
         global $base_url;
         $node = node_load($nid);
-        $uri = $base_url . "/sites/default/files/" . $node->field_site_content_image['und'][0]['filename'];
+        $uri = $node->field_site_content_image['und'][0]['uri'];
+        $uri = str_replace("public://", "", $uri);
+        $uri = $base_url . "/sites/default/files/" . $uri;
         ?>
         <img src="<?php echo $uri; ?>" width="100%"/>
         <h4>

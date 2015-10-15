@@ -99,7 +99,7 @@
                 <span class="icon-bar"></span>
             </button>
         </div>
-        
+
         <?php if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
             <div class="navbar-collapse collapse">
                 <nav role="navigation">
@@ -173,8 +173,8 @@
     <div class="col-md-1"></div>
     <div class="col-md-3 itcc-contact-us-column">
         <ul class="itcc-contact-us">
-            <li><em>Contact us</em></li>
-            <li>In-Touch Counselling</li>
+            <li><h4>Contact us</h4></li>
+            <li>In-Touch Counselling Company Limited</li>
             <li>Kyaddondo, Plot 3992 & 3994,</li>
             <li>Kiwatule-Ntinda Road</li>
             <li>P. O. Box 12754, Kampala, Uganda</li>
@@ -183,7 +183,7 @@
 
     <div class="col-md-3 itcc-contact-us-column">
         <ul class="itcc-contact-us">
-            <li><em>Email us</em></li>
+            <li><h4>Email us</h4></li>
             <li>intouchcounselling1@gmail.com</li>
             <li>&nbsp;</li>
             <li>&nbsp;</li>
@@ -193,7 +193,7 @@
 
     <div class="col-md-3 itcc-contact-us-column">
         <ul class="itcc-contact-us">
-            <li><em>Call us</em></li>
+            <li><h4>Call us</h4></li>
             <li>+256 772 461 004</li>
             <li>+256 701 095 708</li>
             <li>&nbsp;</li>
