@@ -10,7 +10,9 @@
         global $base_url;
         $nid = 83;
         $node = node_load($nid);
-        $uri = $base_url . "/sites/default/files/field/image/" . $node->field_image['und'][0]['filename'];
+        $uri = $node->field_image['und'][0]['uri'];
+        $uri = str_replace("public://", "", $uri);
+        $uri = $base_url . "/sites/default/files/" . $uri;
         ?>
         <img src="<?php echo $uri; ?>" width="100%"/>
     </div>
